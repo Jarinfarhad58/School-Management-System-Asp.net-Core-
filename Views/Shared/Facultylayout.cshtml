@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/Login.css" />
+
+
+</head>
+<body>
+
+    <div class="page">
+        <div class="headerpart">
+            <center> <h1>Faculty Panel</h1></center>
+        </div>
+        <center>
+            <div class="linkspart">
+
+                @Html.ActionLink("Log out", "Login", "Home")
+                @Html.ActionLink("Home", "Index", "Faculty")
+                @Html.ActionLink("Result", "Result", "Faculty")
+                @Html.ActionLink("Attendence", "Attendence", "Faculty")
+                @Html.ActionLink("Routine", "Routine", "Faculty")
+
+
+
+
+            </div>
+        </center>
+
+        @RenderBody()
+
+    </div>
+
+    <div class="footer" style="color:white">
+        <center> This website is developed by Jarin Farhad Akash</center>
+        <center>  <a href="https://www.facebook.com/profile.php?id=100004913508441" style="color:white" target="_blank">For more info click here(Facebook)</a></center>
+    </div>
+
+</body>
+</html>

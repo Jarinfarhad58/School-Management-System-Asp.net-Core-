@@ -1,0 +1,36 @@
+﻿@model School_Management_System_Practicum.Models.Class
+@{
+    ViewData["Title"] = "Addclass";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+<h2>Add Class</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Addclass">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CName" class="control-label"></label>
+                <input asp-for="CName" class="form-control" />
+                <span asp-validation-for="CName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Showclass">Back to List</a>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+﻿.page {
+    height: auto;
+    border-style: groove;
+}
+
+.headerpart {
+    height: 150px;
+    border-style: groove;
+    background-color: royalblue;
+    background-image: url();
+    background-repeat: no-repeat;
+}
+
+.linkspart {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    
+    background-color: blue;
+    border-style: groove;
+}
+
+    .linkspart a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 30px;
+        text-decoration: none;
+    }
+
+        .linkspart a:hover {
+            background-color: mintcream;
+            color: royalblue;
+        }
+
+.mark {
+    height: 15px;
+    margin-top: 5px;
+}
+
+.bodypart {
+    height: 600px;
+    border-style: groove;
+    margin-top: 5px;
+}
+
+    .bodypart .imagepart {
+        height: 300px;
+        border-style: groove;
+        background-image: url("../images/giphy.gif");
+        background-repeat: no-repeat;
+    }
+
+    .bodypart h3 {
+        color: blue;
+        text-align: center;
+    }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 20px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.footer {
+    margin-top: 2px;
+    overflow: hidden;
+    background-color: blue;
+    border-style: groove;
+    height: 40px;
+}

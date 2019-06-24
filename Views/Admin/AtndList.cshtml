@@ -1,0 +1,41 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Attendence>
+@{
+    ViewData["Title"] = "AtndList";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <center> <h1>Teacher Attendence</h1></center>
+
+        @if (Model.Any())
+        {
+
+            <table class="table table-hover">
+
+                <tr>
+                    <th>User Name</th>
+                    <th>Date</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UserName
+                        <td>@item.date</td>
+
+                    </tr>
+
+
+                }
+            </table>
+
+        }
+        else
+        {
+            <p>No Results to be shown</p>
+
+        }
+    </div>
+</div>

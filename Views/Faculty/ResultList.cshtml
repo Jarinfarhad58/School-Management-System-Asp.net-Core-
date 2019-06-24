@@ -1,0 +1,47 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Registration>
+@{
+    ViewData["Title"] = "ResultList";
+    Layout = "~/Views/Shared/Facultylayout.cshtml";
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <center> <h1>Result</h1></center>
+
+        @if (Model.Any())
+        {
+
+            <table class="table table-hover">
+
+                <tr>
+                    <th>Student Name</th>
+                    <th>Class</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@item.Class</td>
+                        <td>
+                            @Html.ActionLink("Upgrade Result", "UpgradeResult", new { id = item.UserName })
+                        </td>
+                    </tr>
+
+
+                }
+            </table>
+
+        }
+        else
+        {
+            <p>No Results to be shown</p>
+
+        }
+    </div>
+</div>

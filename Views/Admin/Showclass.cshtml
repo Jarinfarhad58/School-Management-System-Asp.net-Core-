@@ -1,0 +1,48 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Class>
+@{
+    ViewData["Title"] = "Showclass";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <center> <h1>Classes</h1></center>
+        @if (Model.Any())
+        {
+
+            <table class="table table-hover">
+
+                <tr>
+                   
+                    <th>Class</th>
+                   
+                    <th>Action</th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        
+                        <td>@item.CName</td>
+                        
+                        <td>
+
+                            @Html.ActionLink("Delete", "Deleteclass", new { id1 = item.ClassId })
+                        </td>
+                    </tr>
+
+
+                }
+            </table>
+
+        }
+        else
+        {
+            <p>No Class is Added to be shown</p>
+
+        }
+    </div>
+</div>
+

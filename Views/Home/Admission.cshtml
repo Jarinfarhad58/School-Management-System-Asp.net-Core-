@@ -1,0 +1,28 @@
+﻿@model School_Management_System_Practicum.Models.Addinfo
+
+
+@{
+    ViewData["Title"] = "Admission";
+}
+<style>
+    input[type=button] {
+        width: 48%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+<center>
+    <marquee bgcolor="White" loop="-1"
+             scrollamount="10" width="50%"><h1>@Model.msg</h1></marquee>
+        </center>
+
+<center>
+    <a href="/Home/AdmissionForm">
+        <input type='button' value='Admission Form' />
+    </a>
+</center>

@@ -1,0 +1,91 @@
+﻿@model School_Management_System_Practicum.Models.Form
+@{
+            ViewData["Title"] = "AdmissionForm";
+            Layout = "~/Views/Shared/Hlayout.cshtml";
+        }
+
+<center><h2>Please Fill Up The Admission Form For Further Admission Process</h2></center>
+<div class="loginpart">
+    <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Home" asp-action="AdmissionForm" method="post">
+
+
+        <div class="form-group">
+            <label asp-for="StudentName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="StudentName" class="form-control" />
+                <span asp-validation-for="StudentName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FathersName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FathersName" class="form-control" />
+                <span asp-validation-for="FathersName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MothersName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MothersName" class="form-control" />
+                <span asp-validation-for="MothersName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Village" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Village" class="form-control" />
+                <span asp-validation-for="Village" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PostOffice" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PostOffice" class="form-control" />
+                <span asp-validation-for="PostOffice" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Thana" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Thana" class="form-control" />
+                <span asp-validation-for="Thana" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Jila" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Jila" class="form-control" />
+                <span asp-validation-for="Jila" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Mobile" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Birthday" class="col-md-2 control-label"></label><br />
+            <input asp-for="Birthday" type="date" class="form-control" />
+
+            <span asp-validation-for="Birthday" class="text-danger"></span>
+
+        </div>
+
+        <input type="submit" value="Upload">
+        <input type="reset" value="Clear">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        @if (ViewBag.Message != null)
+    {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+
+        }
+
+    </form>
+</div>
+
+

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Selectcourse>
+@{
+    ViewData["Title"] = "Routine";
+    Layout = "~/Views/Shared/Facultylayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <center> <h1>Assigned Courses</h1></center>
+        @if (Model.Any())
+        {
+
+            <table class="table table-hover">
+
+                <tr>
+                    <th>Faculty User Name</th>
+                    <th>Class</th>
+                    <th>Time</th>
+                    <th>Days</th>
+                    <th>Subject</th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UserName</td>
+                        <td>@item.Class.CName</td>
+                        <td>@item.Time.TName</td>
+                        <td>@item.Country</td>
+                        <td>@item.Subject.SName</td>
+                       
+                    </tr>
+
+
+                }
+            </table>
+
+        }
+        else
+        {
+            <p>No Course is assaigned for you till now</p>
+
+        }
+    </div>
+</div>
+

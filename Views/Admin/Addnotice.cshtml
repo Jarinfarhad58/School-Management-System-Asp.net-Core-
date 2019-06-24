@@ -1,0 +1,82 @@
+﻿@model School_Management_System_Practicum.Models.Notice
+@{
+    ViewData["Title"] = "Addnotice";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<style>
+    input[type=submit] {
+        width: 48%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=file] {
+        width: 40%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=button] {
+        width: 48%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+<center>
+    <h1>Notice upload</h1>
+    <h2>Here you can upload any Notice which will be displayed in the Notice Panel</h2>
+
+    <form method="post" enctype="multipart/form-data" asp-controller="Admin" asp-action="Addnotice">
+        <div class="form-group">
+            <label asp-for="NoticeTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NoticeTitle" class="form-control" /><br/>
+                <span asp-validation-for="NoticeTitle" class="text-danger"></span>
+            </div>
+        </div><br/>
+        <div class="form-group">
+            <div class="col-md-10">
+                <h2>Upload files using this form:</h2>
+                <input type="file" id="file" name="pic" /><br/>
+                <span asp-validation-for="pic" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Upload" />
+            </div>
+        </div><br />
+        <center>
+            <a href="/Admin/Deletenotice">
+                <input type='button' value='Delete Notice' />
+            </a>
+        </center>
+        <br />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @if (ViewBag.Message != null)
+        {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+
+        }
+    </form>
+</center>
+
+

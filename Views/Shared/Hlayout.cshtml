@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/Login.css" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  
+    <div class="page">
+        <div class="headerpart">
+            <center>
+                <img src="~/images/220px-St_Joseph_higher_secondary_badge.jpg" height="150" />
+                <img src="~/images/st.PNG" width="1000" height="100" />
+            </center>
+        </div>
+
+        <div class="linkspart">
+
+            <center>
+
+
+                @Html.ActionLink("Home", "Index", "Home") &nbsp;
+                @Html.ActionLink("Photo Galary", "PGallary", "Home") &nbsp;
+
+                @Html.ActionLink("Notice", "Notice", "Home") &nbsp;
+                @Html.ActionLink("Admission", "Admission", "Home") &nbsp;
+                @Html.ActionLink("Login", "Login", "Home") &nbsp;
+
+            </center>
+
+        </div>
+
+
+      
+        @RenderBody()
+            
+    </div>
+
+      
+
+
+    <div class="footer" style="color:white">
+        <center> This website is developed by Jarin Farhad Akash</center>
+        <center>  <a href="https://www.facebook.com/profile.php?id=100004913508441" style="color:white" target="_blank">For more info click here(Facebook)</a></center>
+    </div>
+
+</body>
+
+</html>
+
+
+

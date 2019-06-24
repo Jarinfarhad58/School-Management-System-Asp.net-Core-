@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="~/css/Admin.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/Login.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+
+
+</head>
+<body>
+    
+    <div class="page">
+        <div class="headerpart">
+            <center> <h1>Admin Panel</h1></center>
+        </div>
+        <div class="linkspart">
+            <center>
+                @Html.ActionLink("Log out", "Logout", "Home")
+                @Html.ActionLink("Home", "AdminDetail", "Admin")
+                @Html.ActionLink("Registration", "Signup", "Home")
+                @Html.ActionLink("Admission Applicants", "AddmissionList", "Admin")
+                @Html.ActionLink("Attendence", "AtndList", "Admin")
+                <div class="dropdown">
+                    <a href="#">Accounts</a>
+
+                    <div class="dropdown-content">
+                        @Html.ActionLink("Faculties Payment", "Fpayment", "Admin")
+                        @Html.ActionLink("Faculty Payment List", "Stfpayment", "Admin")
+                        @Html.ActionLink("Student Fees", "Stufees", "Admin")
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Website part</a>
+                    <div class="dropdown-content">
+                        @Html.ActionLink("Add Admission Info", "Addadmissioninfo", "Admin")
+                        @Html.ActionLink("Add Photos", "Addphotos", "Admin")
+                        @Html.ActionLink("Add Notice", "Addnotice", "Admin")
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Manage Courses</a>
+                    <div class="dropdown-content">
+                        @Html.ActionLink("Add Course", "Addcourse", "Admin")<br />
+                        @Html.ActionLink("Add Class", "Addclass", "Admin")<br />
+                        @Html.ActionLink("Add Time", "Addtime", "Admin")<br />
+                        @Html.ActionLink("Fix Course", "Fixcourse", "Admin")<br />
+                        @Html.ActionLink("Show Courses", "Showcourse", "Admin")<br />
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Manage Actor</a>
+                    <div class="dropdown-content">
+                        @Html.ActionLink("Faculties", "Mfaculties", "Admin")<br />
+                        @Html.ActionLink("Students", "Mstudents", "Admin")<br />
+                        @Html.ActionLink("Admins", "Mstuffs", "Admin")<br />
+
+                    </div>
+                </div>
+
+
+
+            </center>
+
+        </div>
+       
+            @RenderBody()
+
+        </div>
+
+        <div class="footer" style="color:white">
+            <center> This website is developed by Jarin Farhad Akash</center>
+            <center>  <a href="https://www.facebook.com/profile.php?id=100004913508441" style="color:white" target="_blank">For more info click here(Facebook)</a></center>
+        </div>
+
+</body>
+</html>

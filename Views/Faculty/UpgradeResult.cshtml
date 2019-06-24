@@ -1,0 +1,114 @@
+﻿@model School_Management_System_Practicum.Models.Result
+@{
+    ViewData["Title"] = "UpgradeResult";
+    Layout = "~/Views/Shared/Facultylayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+<center><h2>You can update result here</h2></center>
+
+
+
+
+<form class="form-horizontal" asp-controller="Faculty" asp-action="UpgradeResult" method="post">
+
+    <div class="form-group">
+        <label asp-for="UserName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+   
+   
+   
+    <center><h2>First Upload the First Term Result</h2></center>
+    <div class="form-group">
+        <label asp-for="Bngla" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Bngla" class="form-control" />
+            <span asp-validation-for="Bngla" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="English" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="English" class="form-control" />
+            <span asp-validation-for="English" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mathmatics" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Mathmatics" class="form-control" />
+            <span asp-validation-for="Mathmatics" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Science" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Science" class="form-control" />
+            <span asp-validation-for="Science" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Religion" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Religion" class="form-control" />
+            <span asp-validation-for="Religion" class="text-danger"></span>
+        </div>
+    </div>
+    <center><h2> Upload the MidTerm Term Result</h2></center>
+    <div class="form-group">
+        <label asp-for="Bnglam" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Bnglam" class="form-control" />
+            <span asp-validation-for="Bnglam" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Englishm" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Englishm" class="form-control" />
+            <span asp-validation-for="Englishm" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mathmaticsm" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Mathmaticsm" class="form-control" />
+            <span asp-validation-for="Mathmaticsm" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Sciencem" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Sciencem" class="form-control" />
+            <span asp-validation-for="Sciencem" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Religionm" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Religionm" class="form-control" />
+            <span asp-validation-for="Religionm" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-default">Upload</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="reset" class="btn btn-default">Clear</button>
+        </div>
+    </div>
+    @if (ViewBag.Message != null)
+    {
+        <div class="form-control">
+            <div class="col-md-10">@ViewBag.Message</div>
+        </div>
+
+    }
+</form>

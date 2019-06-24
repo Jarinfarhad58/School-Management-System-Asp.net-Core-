@@ -1,0 +1,50 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Registration>
+@{
+    ViewData["Title"] = "Mstuffs";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+
+<center><h1>Admin List</h1></center>
+
+<div class="row">
+    <div class="col-md-12">
+
+        @if (Model.Any())
+        {
+            <table class="table">
+
+                <tr>
+                    <th>Admin Name</th>
+                    <th>Mobile Number</th>
+                    <th>Blood Group</th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@item.MobileNumber</td>
+                        <td>@item.BloodGroup</td>
+                        <td>
+                            @Html.ActionLink("Detail", "FacultyDetail", new { id = item.UserName }) |
+                            @Html.ActionLink("Edit", "FacultyEdit", new { id = item.UserName }) |
+                            @Html.ActionLink("Delete", "AdminDelete", new { id = item.UserName })
+                        </td>
+
+                    </tr>
+
+
+                }
+            </table>
+
+        }
+        else
+        {
+            <p>No Results to be shown</p>
+
+        }
+    </div>
+</div>

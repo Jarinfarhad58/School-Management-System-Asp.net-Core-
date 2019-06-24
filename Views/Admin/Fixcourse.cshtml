@@ -1,0 +1,60 @@
+﻿@model School_Management_System_Practicum.Models.Selectcourse
+@{
+    ViewData["Title"] = "Fixcourse";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+}
+    
+       <center><h2>Fix Course</h2></center>
+
+        <hr />
+        <div class="loginpart">
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Fixcourse">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="UserName" class="control-label"></label>
+                            <input asp-for="UserName" class="form-control" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SubjectId" class="control-label"></label>
+                            <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.SubjectId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ClassId" class="control-label"></label>
+                            <select asp-for="ClassId" class="form-control" asp-items="ViewBag.ClassId"></select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="TimeId" class="control-label"></label>
+                            <select asp-for="TimeId" class="form-control" asp-items="ViewBag.TimeId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Country" class="control-label"></label>
+
+                            <select asp-for="Country" asp-items="Model.Countries"></select>
+                            <span asp-validation-for="Country" class="text-danger"></span>
+
+                        </div>
+
+                        <center>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+                        </center>
+                        @if (ViewBag.Message != null)
+                        {
+                            <div class="form-control">
+                                <div class="form-md-10">@ViewBag.Message</div>
+                            </div>
+                        }
+                    </form>
+                </div>
+            </div>
+</div>
+            
+    
+

@@ -1,0 +1,29 @@
+﻿@model School_Management_System_Practicum.Models.Resultclass
+@{
+    ViewData["Title"] = "Result";
+    Layout = "~/Views/Shared/Facultylayout.cshtml";
+}
+<div class="loginpart">
+    <form class="form-horizontal" asp-controller="Faculty" asp-action="Result" method="post">
+
+        <div class="form-group">
+            <label asp-for="Class" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Class" class="form-control" />
+                <span asp-validation-for="Class" class="text-danger"></span>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+
+        }
+
+    </form>
+</div>

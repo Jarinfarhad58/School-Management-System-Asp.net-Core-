@@ -1,0 +1,39 @@
+﻿@model School_Management_System_Practicum.Models.Addinfo
+@{
+    ViewData["Title"] = "Addadmissioninfo";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+   
+}
+<center><h2> Addmition information should be added from here.</h2></center>
+
+<form class="form-horizontal" asp-controller="Admin" asp-action="Addadmissioninfo" method="post">
+
+    <div class="form-group">
+        <label asp-for="msg" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="msg" class="form-control" />
+            <span asp-validation-for="msg" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="msgno" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="msgno" class="form-control" />
+            <span asp-validation-for="msgno" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="loginpart">
+        <input type="submit" value="Upload">
+        <input type="reset" value="Clear">
+    </div>
+   
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @if (ViewBag.Message != null)
+    {
+        <div class="form-control">
+            <div class="col-md-10">@ViewBag.Message</div>
+        </div>
+
+    }
+</form>
+

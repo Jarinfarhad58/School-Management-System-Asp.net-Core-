@@ -1,0 +1,50 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Fpayment>
+@{
+    ViewData["Title"] = "Stfpayment";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+<div class="row">
+    <div class="col-md-12">
+      <center>  <h2>Faculty Payment List</h2></center>
+        @if (Model.Any())
+        {
+            <table class="table">
+                <tr>
+                    <th>Payment ID</th>
+                    <th>User Name</th>
+                    <th>Date</th>
+                    <th>Amount Given</th>
+                    <th>Action</th>
+                    
+
+                </tr>
+                @foreach (var item in Model)
+                {
+                    
+                <tr>
+                    <td>@item.PaymentId</td>
+                    <td>@item.UserName</td>
+                    <td>@item.date</td>
+                    <td>@item.amount</td>
+                   
+                    <td>
+                        @Html.ActionLink("PDF", "Paymentpdf", new { id = item.PaymentId })|
+                        @Html.ActionLink("Delete", "FpaymentDelete", new { id = item.PaymentId })
+
+                    </td>
+                </tr>
+
+
+                }
+            </table>
+            <div><h4>Total Transection:</h4><h4>@Model.Sum((s => (int.Parse(s.amount))))</h4></div>
+        }
+        else
+        {
+            <p>No Results to be shown</p>
+
+        }
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@model School_Management_System_Practicum.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+
+<center><h1>Admin,Faculty,Student Login</h1></center>
+
+
+<div class="loginpart">
+    <form class="form-horizontal" asp-controller="Home" asp-action="Login" method="post">
+        <div class="form-group">
+            <label asp-for="UserName" class="col-md-2 control-label" ></label>
+            <div class="col-md-10" >
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <input type="submit" value="Login">
+        <input type="reset" value="Clear">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+
+    </form>
+</div>
+
+

@@ -1,0 +1,56 @@
+﻿@model School_Management_System_Practicum.Models.Sfees
+@{
+    ViewData["Title"] = "Stufees";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<center><h2>Student Fees</h2></center>
+<hr />
+<div class="loginpart">
+    <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Admin" asp-action="Stufees" method="post">
+        <div class="form-group">
+            <label asp-for="UserName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="amount" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="amount" class="form-control" />
+                <span asp-validation-for="amount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="date" class="col-md-2 control-label"></label><br />
+            <input asp-for="date" type="date" class="form-control" />
+
+            <span asp-validation-for="date" class="text-danger"></span>
+
+        </div>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+        <center>
+            <a href="/Admin/Splist">
+                <input type='button' value='Student Payment List' />
+            </a>
+        </center>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+
+        }
+
+    </form>
+</div>
+
+
+
+
+

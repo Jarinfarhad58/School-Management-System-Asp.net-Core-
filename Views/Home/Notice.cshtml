@@ -1,0 +1,39 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Notice>
+@{
+    ViewData["Title"] = "Notice";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+<center><h1>Notice</h1></center>
+
+<div class="row">
+    <div class="col-md-12">
+
+        @if (Model.Any())
+        {
+            <table class="table">
+                <tr>
+                    <th>Click on the links to download</th>
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="~/@item.pic">@item.NoticeTitle</a>
+                        </td>
+                    </tr>
+
+                }
+            </table>
+
+        }
+        else
+        {
+            <p>No Notice is available</p>
+
+        }
+    </div>
+</div>
+

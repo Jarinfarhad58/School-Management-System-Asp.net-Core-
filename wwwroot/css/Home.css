@@ -1,0 +1,71 @@
+﻿.page 
+{
+   
+    height:auto;
+    border-style:groove;
+}
+.headerpart {
+   
+    height: 150px;
+    border-style: groove;
+    background-color:royalblue;
+    background-image:url();
+    background-repeat:no-repeat;
+}
+.linkspart {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    overflow: hidden;
+    background-color: blue;
+    border-style: groove;
+    
+}
+
+.linkspart a{
+   float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 90px;
+    text-decoration: none;
+}
+
+ .linkspart a:hover {
+        background-color: mintcream;
+        color: royalblue;
+    }
+.mark {
+
+   height: 15px;
+    
+    margin-top: 5px;
+}
+    .bodypart {
+   
+    height: 600px;
+    border-style: groove;
+    margin-top: 5px;
+}
+
+        .bodypart .imagepart {
+         
+            height: 300px;
+            border-style: groove;
+            background-image: url("../images/giphy.gif");
+            
+            background-repeat: no-repeat;
+        }
+        .bodypart h3 {
+            color:blue;
+                text-align:center;
+        }
+.footer {
+    margin-top: 2px;
+    overflow: hidden;
+    background-color: blue;
+    border-style: groove;
+ 
+    height: 40px;
+}

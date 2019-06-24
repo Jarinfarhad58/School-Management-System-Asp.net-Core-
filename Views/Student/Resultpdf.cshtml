@@ -1,0 +1,262 @@
+﻿@model School_Management_System_Practicum.Models.Result
+@{
+    ViewData["Title"] = "Resultpdf";
+    Layout = "~/Views/Shared/PDF.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+@{
+
+
+
+    var Bangla = (float.Parse(Model.Bngla) / 100 * 50 + float.Parse(Model.Bnglam) / 100 * 50);
+    var English = (float.Parse(Model.English) / 100 * 50 + float.Parse(Model.Englishm) / 100 * 50);
+    var Science = (float.Parse(Model.Science) / 100 * 50 + float.Parse(Model.Sciencem) / 100 * 50);
+    var Relagion = (float.Parse(Model.Religion) / 100 * 50 + float.Parse(Model.Religionm) / 100 * 50);
+    var Mathematics = (float.Parse(Model.Mathmatics) / 100 * 50 + float.Parse(Model.Mathmaticsm) / 100 * 50);
+
+
+    double Bpoint;
+    if (Bangla > 79)
+    {
+        Bpoint = 5;
+    }
+
+    else if (Bangla > 69 && Bangla < 80)
+    {
+        Bpoint = 4.5;
+    }
+    else if (Bangla > 59 && Bangla < 70)
+    {
+        Bpoint = 4;
+    }
+    else if (Bangla > 49 && Bangla < 60)
+    {
+        Bpoint = 3;
+    }
+    else if (Bangla > 39 && Bangla < 50)
+    {
+        Bpoint = 2;
+    }
+    else if (Bangla > 32 && Bangla < 40)
+    {
+        Bpoint = 1;
+    }
+    else
+    {
+        Bpoint = 0;
+    }
+
+    double Epoint;
+    if (English > 79)
+    {
+        Epoint = 5;
+    }
+    else if (English > 69 && English < 80)
+    {
+        Epoint = 4.5;
+    }
+    else if (English > 59 && English < 70)
+    {
+        Epoint = 4;
+    }
+    else if (English > 49 && English < 60)
+    {
+        Epoint = 3;
+    }
+    else if (English > 39 && English < 50)
+    {
+        Epoint = 2;
+    }
+    else if (English > 32 && English < 40)
+    {
+        Epoint = 1;
+    }
+    else
+    {
+        Epoint = 0;
+    }
+
+    double Spoint;
+    if (Science > 79)
+    {
+        Spoint = 5;
+    }
+    else if (Science > 69 && Science < 80)
+    {
+        Spoint = 4.5;
+    }
+    else if (Science > 59 && Science < 70)
+    {
+        Spoint = 4;
+    }
+    else if (Science > 49 && Science < 60)
+    {
+        Spoint = 3;
+    }
+    else if (Science > 39 && Science < 50)
+    {
+        Spoint = 2;
+    }
+    else if (Science > 32 && Science < 40)
+    {
+        Spoint = 1;
+    }
+    else
+    {
+        Spoint = 0;
+    }
+
+    double Rpoint;
+    if (Relagion > 79)
+    {
+        Rpoint = 5;
+    }
+    else if (Relagion > 69 && Relagion < 80)
+    {
+        Rpoint = 4.5;
+    }
+    else if (Relagion > 59 && Relagion < 70)
+    {
+        Rpoint = 4;
+    }
+    else if (Relagion > 49 && Relagion < 60)
+    {
+        Rpoint = 3;
+    }
+    else if (Relagion > 39 && Relagion < 50)
+    {
+        Rpoint = 2;
+    }
+    else if (Relagion > 32 && Relagion < 40)
+    {
+        Rpoint = 1;
+    }
+    else
+    {
+        Rpoint = 0;
+    }
+
+    double Mpoint;
+    if (Mathematics > 79)
+    {
+        Mpoint = 5;
+    }
+    else if (Mathematics > 69 && Mathematics < 80)
+    {
+        Mpoint = 4.5;
+    }
+    else if (Mathematics > 59 && Mathematics < 70)
+    {
+        Mpoint = 4;
+    }
+    else if (Mathematics > 49 && Mathematics < 60)
+    {
+        Mpoint = 3;
+    }
+    else if (Mathematics > 39 && Mathematics < 50)
+    {
+        Mpoint = 2;
+
+    }
+    else if (Mathematics > 32 && Mathematics < 40)
+    {
+        Mpoint = 1;
+    }
+    else
+    {
+        Mpoint = 0;
+    }
+
+
+    <center><h2>Report Card</h2></center>
+    <table align="right" border="1">
+        <tr>
+            <th>Marks</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td>90-100</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>80-89</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>70-79</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>60-69</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>0-59</td>
+            <td>F</td>
+        </tr>
+    </table><br /><br />
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+
+                @Html.DisplayNameFor(model => model.Bngla)
+            </dt>
+
+            <dd>
+                @((float.Parse(Model.Bngla) / 100 * 50 + float.Parse(Model.Bnglam) / 100 * 50))
+
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.English)
+            </dt>
+
+            <dd>
+                @((float.Parse(Model.English) / 100 * 50 + float.Parse(Model.Englishm) / 100 * 50))
+
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Mathmatics)
+            </dt>
+
+            <dd>
+                @((float.Parse(Model.Mathmatics) / 100 * 50 + float.Parse(Model.Mathmaticsm) / 100 * 50))
+
+            </dd>
+            <dt>
+
+                @Html.DisplayNameFor(model => model.Science)
+            </dt>
+
+            <dd>
+                @((float.Parse(Model.Science) / 100 * 50 + float.Parse(Model.Sciencem) / 100 * 50))
+
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Religion)
+            </dt>
+
+            <dd>
+                @((float.Parse(Model.Religion) / 100 * 50 + float.Parse(Model.Religionm) / 100 * 50))
+
+            </dd>
+
+            <dt>
+                GPA:
+            </dt>
+            <dd>
+                @(((Bpoint + Epoint + Spoint + Mpoint + Rpoint + Mpoint) / 6).ToString("0.00"))
+            </dd>
+        </dl>
+    </div>
+    }

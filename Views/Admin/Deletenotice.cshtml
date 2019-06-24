@@ -1,0 +1,38 @@
+﻿@model IEnumerable<School_Management_System_Practicum.Models.Notice>
+@{
+    ViewData["Title"] = "Deletenotice";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+
+<center><h2>Delete Notices from here</h2></center>
+<div class="row">
+    <div class="col-md-12">
+        @if (Model.Any())
+        {
+            <table class="table table-hover">
+                <tr>
+                    <th>Notice ID</th>
+                    <th>Notice Title</th>
+                    <th>Action</th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NoticeID</td>
+                        <td>@item.NoticeTitle</td>
+                        <td>
+                            @Html.ActionLink("Delete", "Noticedelete", new { id = item.NoticeID })
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>No notice is available</p>
+        }
+    </div>
+</div>

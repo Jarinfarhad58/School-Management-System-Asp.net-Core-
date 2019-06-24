@@ -1,0 +1,88 @@
+﻿@model School_Management_System_Practicum.Models.Form
+@{
+    ViewData["Title"] = "Admissioninfo";
+    Layout = "~/Views/Shared/PDF.cshtml";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+}
+    
+<center><h2>Student Admission Form</h2></center>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FormId)
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.FormId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MothersName)
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.MothersName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Village)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Village)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostOffice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Thana)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Jila)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jila)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+    </dl>
+</div>
+<right><p>Authority Signature</p></right>
+
+
+
+
+
+
